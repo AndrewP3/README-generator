@@ -68,14 +68,44 @@ const questions = [
                 return false;
             }
         }
-    }
+    },
+    {
+        type: 'rawlist',
+        name: 'license',
+        message: 'Please select a license. (Required)',
+        choices: ["agpl-3.0","gpl-3.0",]
+    },
 ];
 
+var pjson = require('./package.json');
+console.log(pjson.version);
+
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data)
+ {
+    fs.writeFile(fileName, data, function(err) {
+        if (err) {
+            return console.log(err)
+        }
+        console.log("done") 
+    })
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions)
+
 
 // Function call to initialize app
-init();
+// .then (console.log(inquirer.answers))
+    .then(answers => {
+        console.log(answers)
+        const generateString = generateMarkdown(answers)
+        
+     writeToFile('README.md', generateString)})
+
+    .catch(err => {
+        console.log(err);
+    })
+}
+init ()
