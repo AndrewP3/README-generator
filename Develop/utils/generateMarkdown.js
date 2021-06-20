@@ -1,7 +1,27 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  if (license) {
+    return `![${license} License](https://img.shields.io/badge/license-${license.split(' ').join('%20')}-red)
+    `;
+  } else {
+    return "";
+  }
+};
 
+function renderLicenseBadge(license) {
+  console.log("this is license badge"+license)
+  if (license) {
+    return `
+    ## license
+    
+    The following link contains badge information: ${renderLicenseBadge(license)}`;
+  }
+  else {
+    return "";
+  }
+  }
+  
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {

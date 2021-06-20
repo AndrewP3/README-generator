@@ -73,7 +73,7 @@ const questions = [
         type: 'rawlist',
         name: 'license',
         message: 'Please select a license. (Required)',
-        choices: ["agpl-3.0","gpl-3.0",]
+        choices: ["agpl-3.0","gpl-3.0","lgpl-3.0","mpl-2.0","apache-2.0","mit"]
     },
 ];
 
