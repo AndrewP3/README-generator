@@ -9,19 +9,6 @@ function renderLicenseBadge(license) {
   }
 };
 
-function renderLicenseBadge(license) {
-  console.log("this is license badge"+license)
-  if (license) {
-    return `
-    ## license
-    
-    The following link contains badge information: ${renderLicenseBadge(license)}`;
-  }
-  else {
-    return "";
-  }
-  }
-  
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
